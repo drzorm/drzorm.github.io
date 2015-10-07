@@ -1,0 +1,783 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="对痛苦的思考让人成长。" />
+
+
+
+  <meta name="keywords" content="markdown," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="段落、标题、区块代码Markdown支持两种标题的语法，Setext和atx形式。Setext形式是用底线的形式，利用 = （最高阶标题）和 - （第二阶标题），Atx形式在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶。
+区块使用则使用 email 形式的 &amp;gt; 角括号。
+标题示例代码：1234一级标题=======二级标题-------
+效果：
+一级标题二级标题代码:12345">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown语法(快速入门)">
+<meta property="og:url" content="http://drzorm.github.io/2014/11/04/markdown-syntax/index.html">
+<meta property="og:site_name" content="西城小生">
+<meta property="og:description" content="段落、标题、区块代码Markdown支持两种标题的语法，Setext和atx形式。Setext形式是用底线的形式，利用 = （最高阶标题）和 - （第二阶标题），Atx形式在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶。
+区块使用则使用 email 形式的 &amp;gt; 角括号。
+标题示例代码：1234一级标题=======二级标题-------
+效果：
+一级标题二级标题代码:12345">
+<meta property="og:image" content="http://drzorm.github.io/img/author.gif">
+<meta property="og:image" content="http://drzorm.github.io/img/author.gif">
+<meta property="og:updated_time" content="2015-10-07T10:49:15.793Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown语法(快速入门)">
+<meta name="twitter:description" content="段落、标题、区块代码Markdown支持两种标题的语法，Setext和atx形式。Setext形式是用底线的形式，利用 = （最高阶标题）和 - （第二阶标题），Atx形式在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶。
+区块使用则使用 email 形式的 &amp;gt; 角括号。
+标题示例代码：1234一级标题=======二级标题-------
+效果：
+一级标题二级标题代码:12345">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Markdown语法(快速入门) | 西城小生 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?8a28ea12d27f136aff2be378974bd1f7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">西城小生</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              Markdown语法(快速入门)
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-11-04T16:41:20+08:00" content="2014-11-04">
+            2014-11-04
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2014/11/04/markdown-syntax/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/04/markdown-syntax/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h3 id="段落、标题、区块代码">段落、标题、区块代码</h3><p>Markdown支持两种标题的语法，Setext和atx形式。Setext形式是用底线的形式，利用 <code>=</code> （最高阶标题）和 <code>-</code> （第二阶标题），Atx形式在行首插入 1 到 6 个 <code>#</code> ，对应到标题 1 到 6 阶。</p>
+<p>区块使用则使用 email 形式的 <code>&gt;</code> 角括号。</p>
+<h4 id="标题示例">标题示例</h4><p>代码：<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">一级标题</span><br><span class="line">=======</span></span><br><span class="line"><span class="header">二级标题</span><br><span class="line">-------</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><p>代码:<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#一级标题</span></span><br><span class="line"><span class="preprocessor">##二级标题</span></span><br><span class="line"><span class="preprocessor">###三级标题</span></span><br><span class="line"><span class="preprocessor">####四级标题</span></span><br><span class="line"><span class="preprocessor">#####五级标题</span></span><br><span class="line"><span class="preprocessor">######六级标题</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<h1 id="一级标题-1">一级标题</h1><h2 id="二级标题-1">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><hr>
+<h4 id="区块代码示例">区块代码示例</h4><p>代码：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;引用文字内容</span><br><span class="line"><span class="blockquote">&gt;</span><br><span class="line">&gt;引用文字内容的第二个段落</span></span><br><span class="line"><span class="blockquote">&gt;</span><br><span class="line">&gt;### 三级标题</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<blockquote>
+<p>引用文字内容</p>
+<p>引用文字内容的第二个段落</p>
+<h3 id="三级标题-1">三级标题</h3></blockquote>
+<hr>
+<h3 id="修辞和强调">修辞和强调</h3><p>Markdown使用 <code>*</code> 和 <code>_</code> 来标记需要强调的区段。</p>
+<h4 id="强调示例">强调示例</h4><p>代码：<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这里使用了<span class="keyword">*</span>强调<span class="keyword">*</span>。</span><br><span class="line">这里也使用了_强调_.</span><br><span class="line">这里使用了<span class="keyword">*</span><span class="keyword">*</span>着重强调<span class="keyword">*</span><span class="keyword">*</span>。</span><br><span class="line">这里也使用了__着重强调__.</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p>这里使用了<em>强调</em>。</p>
+<p>这里也使用了<em>强调</em>.</p>
+<p>这里使用了<strong>着重强调</strong>。</p>
+<p>这里也使用了<strong>着重强调</strong>.</p>
+<hr>
+<h3 id="列表">列表</h3><h4 id="无序列表示例">无序列表示例</h4><p>无序列表使用 <code>*</code> 、 <code>+</code> 、 <code>-</code> 来做列表的项目标记。</p>
+<p>代码：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>项目一</span><br><span class="line"><span class="bullet">* </span>项目二</span><br><span class="line"><span class="bullet">* </span>项目三</span><br><span class="line"></span><br><span class="line"><span class="bullet">+ </span>项目1</span><br><span class="line"><span class="bullet">+ </span>项目2</span><br><span class="line"><span class="bullet">+ </span>项目3    </span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>项目a</span><br><span class="line"><span class="bullet">- </span>项目b</span><br><span class="line"><span class="bullet">- </span>项目c</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>外层列表项目</span><br><span class="line"> + 内层列表项目</span><br><span class="line"> + 内层列表项目</span><br><span class="line"> + 内层列表项目</span><br><span class="line"><span class="bullet">- </span>外层列表项目</span><br></pre></td></tr></table></figure></p>
+<p>效果:</p>
+<ul>
+<li>项目一</li>
+<li>项目二</li>
+<li>项目三</li>
+</ul>
+<ul>
+<li>项目1</li>
+<li>项目2</li>
+<li>项目3</li>
+</ul>
+<ul>
+<li>项目a</li>
+<li>项目b</li>
+<li>项目c</li>
+</ul>
+<ul>
+<li>外层列表项目<ul>
+<li>内层列表项目</li>
+<li>内层列表项目</li>
+<li>内层列表项目</li>
+</ul>
+</li>
+<li>外层列表项目</li>
+</ul>
+<h4 id="有序列表示例">有序列表示例</h4><p>有序列表则是使用一般数字接这一个英文句点作为项目标记：</p>
+<p>代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 项目一</span><br><span class="line"><span class="number">2.</span> 项目二</span><br><span class="line"><span class="number">3.</span> 项目三</span><br></pre></td></tr></table></figure></p>
+<p>效果:</p>
+<ol>
+<li>项目一</li>
+<li>项目二</li>
+<li>项目三</li>
+</ol>
+<p>如果你在项目之间插入空行，那项目的内容会用 <code>&lt;p&gt;</code> 包裹起来，你也可以在一个项目内放上多个段落，只要在它缩排 4 个空白或 1 个tab。</p>
+<p>代码：<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>一个列表项目</span><br><span class="line"><span class="code">	有多个段落</span></span><br><span class="line"><span class="bullet">* </span>另一个列表项目</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<ul>
+<li><p>一个列表项目</p>
+<p>  有多个段落</p>
+</li>
+<li><p>另一个列表项目</p>
+</li>
+</ul>
+<hr>
+<h3 id="链接">链接</h3><p>Markdown支援两种形式的链接语法，行内和参考两种形式，两种都可以使用角括号来把文字转成链接。</p>
+<h4 id="行内形式链接示例">行内形式链接示例</h4><p>代码：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">这是个[<span class="link_label">链接示例</span>](<span class="link_url">http://drzorm.github.io/</span>)。</span><br><span class="line">这是个[<span class="link_label">链接示例</span>](<span class="link_url">http://drzorm.github.io/ "链接示例"</span>)。</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p>这是个<a href="http://drzorm.github.io/">链接示例</a>。</p>
+<p>这是个带title属性的<a href="http://drzorm.github.io/" title="链接示例">链接示例</a>。</p>
+<h4 id="参考形式链接示例">参考形式链接示例</h4><p>代码：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">不懂的问题可以去[<span class="link_label">百度</span>][<span class="link_reference">1</span>]、[<span class="link_label">谷歌</span>][<span class="link_reference">2</span>]或者[<span class="link_label">必应</span>][<span class="link_reference">3</span>]搜索解决方案。</span><br><span class="line">[<span class="link_reference">1</span>]:<span class="link_url"> http://baidu.com "baidu"</span></span><br><span class="line">[<span class="link_reference">2</span>]:<span class="link_url"> http://google.com "google"</span></span><br><span class="line">[<span class="link_reference">3</span>]:<span class="link_url"> http://bing.com "bing"</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p>不懂的问题可以去<a href="http://baidu.com" title="baidu" target="_blank" rel="external">百度</a>、<a href="http://google.com" title="google" target="_blank" rel="external">谷歌</a>或者<a href="http://drzorm.github.io/img/author.gif" title="title属性">必应</a>搜索解决方案。</p>
+<p>tilte 属性是选择性的，链接名称可以用字母、数字和空格，但是不分大小写。</p>
+<h4 id="自动链接">自动链接</h4><p>Markdown支持比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来，Markdown就会自动把它转成链接，链接的文字就和链接位置一样，例如：</p>
+<p>代码：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="string">http:</span><span class="comment">//drzorm.github.io/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p><a href="http://drzorm.github.io/">http://drzorm.github.io/</a></p>
+<h4 id="自动邮箱链接">自动邮箱链接</h4><p>自动的邮件链接也很类似，只是Markdown会先做一个编码转换的过程，把文字自负转换成 16 进位码的HTML实体，这样的格式可以混淆一些不好的信箱地址收集机器人，例如：</p>
+<p>代码：<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;drzorm@gmail.com&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p><a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x64;&#114;&#x7a;&#x6f;&#114;&#x6d;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;">&#x64;&#114;&#x7a;&#x6f;&#114;&#x6d;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a></p>
+<hr>
+<h3 id="图片">图片</h3><p>图片的语法和链接很像。</p>
+<h4 id="行内形式（title是选择性的）：">行内形式（title是选择性的）：</h4><p>代码：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">alt 属性</span>](<span class="link_url">http://drzorm.github.io/img/author.gif "title属性"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p><img src="http://drzorm.github.io/img/author.gif" alt="alt 属性" title="title属性"></p>
+<h4 id="参考形式：">参考形式：</h4><p>代码：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">alt 属性</span>][<span class="link_reference">id</span>]</span><br><span class="line">[<span class="link_reference">id</span>]:<span class="link_url"> http://drzorm.github.io/img/author.gif "title属性"</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p><img src="http://drzorm.github.io/img/author.gif" alt="alt 属性" title="title属性"></p>
+<h3 id="程序代码">程序代码</h3><p>在一般的段落文字中，你可以使用反引号 <code>` </code> 来标记代码区段，区段内的 <code>&amp;</code> 、 <code>&lt;</code> 、 <code>&gt;</code> 都会被自动的转换成HTML实体，这项特性让你可以很容易在代码区段内插入HTML码，建立一个已经格式化好的代码区块，只要每行都缩进 4 个空格或是一个 tab 就可以了，而 <code>&amp;</code> 、 <code>&lt;</code> 和 <code>&gt;</code> 也一样会自动转换成HTML实体。</p>
+<p>如果要标记一小段行内程序代码，可以用反引号把它包起来（<code>` </code>）,例如：</p>
+<p>代码：<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Use</span> the `printf()` <span class="function"><span class="keyword">function</span>.</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p>Use the <code>printf()</code> function.</p>
+<p>如果要在程序代码区段内插入反引号，可以使用多个反引号来开启和结束程序代码区段：</p>
+<p>代码：<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="escape">``</span>This is <span class="literal">a</span> literal backtick (<span class="escape">`)</span> here.<span class="escape">``</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p><code>This is a literal backtick (`) here.</code></p>
+<p>程序代码区段的起始和结束端都可以放入一个空白，起始端后面一个，结束段前面一个，这样就可以在区段的一开始就插入反引号：</p>
+<p>代码：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A single backtick <span class="keyword">in</span> <span class="tag">a</span> <span class="tag">code</span> <span class="tag">span</span>: `` ` ``</span><br><span class="line"></span><br><span class="line">A backtike-delimited string <span class="keyword">in</span> <span class="tag">a</span> <span class="tag">code</span> <span class="tag">span</span>: `` `foo` ``</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p>A single backtick in a code span: <code>` </code></p>
+<p>A backtike-delimited string in a code span: <code>`foo` </code></p>
+<hr>
+<h3 id="转义字符">转义字符</h3><p>Markdown可以利用反斜杠来插入一些在语法中有其他意义的符号。</p>
+<p>Markdown支持在下面的这些符号前面加上反斜杠来帮助插入普通的符号：</p>
+<pre><code>\   反斜杠
+`   反引号
+<span class="bullet">*   </span>星号
+_   底线
+{}  大括号
+[]  方括号
+()  括号
+<span class="header">#   井字号</span>
+<span class="bullet">+   </span>加号
+<span class="bullet">-   </span>减号
+.   英文句点
+!   惊叹号
+</code></pre><p>代码：<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\<span class="keyword">*</span>文字前后插入普通的星号或底线时需要用反斜杠\<span class="keyword">*</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p>*文字前后插入普通的星号或底线时需要用反斜杠*</p>
+<hr>
+<h3 id="其他补充">其他补充</h3><p>代码：<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">单个回车</span><br><span class="line">视为空格。</span><br><span class="line"></span><br><span class="line">连续回车</span><br><span class="line"></span><br><span class="line">视为分段。</span><br><span class="line"></span><br><span class="line">行尾加两个空格，这里-&gt;  </span><br><span class="line">即可段内换行。</span><br><span class="line"></span><br><span class="line"><span class="comment">---</span></span><br><span class="line">上面是分割线</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p>单个回车<br>视为空格。</p>
+<p>连续回车</p>
+<p>视为分段。</p>
+<p>行尾加两个空格，这里-&gt;<br>即可段内换行。</p>
+<hr>
+<p>上面是分割线</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/markdown/" rel="tag">#markdown</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/11/05/hexo-build-blog/" rel="prev">使用Hexo和GitHub搭建博客</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/11/04/blog-preface/" rel="next">建博前言</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2014/11/04/markdown-syntax/"
+                   data-title="Markdown语法(快速入门)" data-url="http://drzorm.github.io/2014/11/04/markdown-syntax/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Drzorm" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Drzorm</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">对痛苦的思考让人成长。</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#段落、标题、区块代码"><span class="nav-number">1.</span> <span class="nav-text">段落、标题、区块代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标题示例"><span class="nav-number">1.1.</span> <span class="nav-text">标题示例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number"></span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题"><span class="nav-number"></span> <span class="nav-text">二级标题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题-1"><span class="nav-number"></span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题-1"><span class="nav-number"></span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题"><span class="nav-number">1.</span> <span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四级标题"><span class="nav-number">1.1.</span> <span class="nav-text">四级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#五级标题"><span class="nav-number">1.1.1.</span> <span class="nav-text">五级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#六级标题"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">六级标题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区块代码示例"><span class="nav-number">1.2.</span> <span class="nav-text">区块代码示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题-1"><span class="nav-number">2.</span> <span class="nav-text">三级标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修辞和强调"><span class="nav-number">3.</span> <span class="nav-text">修辞和强调</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#强调示例"><span class="nav-number">3.1.</span> <span class="nav-text">强调示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">4.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无序列表示例"><span class="nav-number">4.1.</span> <span class="nav-text">无序列表示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有序列表示例"><span class="nav-number">4.2.</span> <span class="nav-text">有序列表示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">5.</span> <span class="nav-text">链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#行内形式链接示例"><span class="nav-number">5.1.</span> <span class="nav-text">行内形式链接示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考形式链接示例"><span class="nav-number">5.2.</span> <span class="nav-text">参考形式链接示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动链接"><span class="nav-number">5.3.</span> <span class="nav-text">自动链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动邮箱链接"><span class="nav-number">5.4.</span> <span class="nav-text">自动邮箱链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">6.</span> <span class="nav-text">图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#行内形式（title是选择性的）："><span class="nav-number">6.1.</span> <span class="nav-text">行内形式（title是选择性的）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考形式："><span class="nav-number">6.2.</span> <span class="nav-text">参考形式：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序代码"><span class="nav-number">7.</span> <span class="nav-text">程序代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转义字符"><span class="nav-number">8.</span> <span class="nav-text">转义字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他补充"><span class="nav-number">9.</span> <span class="nav-text">其他补充</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Drzorm</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"drzorm"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
